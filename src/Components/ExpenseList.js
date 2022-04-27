@@ -14,9 +14,10 @@ const ExpenseList = () => {
     ]
     return (
         <>
-            <ul class='list-group mt-3 mb-3'>
+            <ul className='list-group mt-3 mb-3'>
                 {expenses.map((expense) => (
                     <ExpenseItem
+                        key={expense.id}
                         id={expense.id}
                         name={expense.name}
                         cost={expense.cost}
