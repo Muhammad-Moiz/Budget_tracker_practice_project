@@ -1,31 +1,36 @@
-import React from 'react';
-import ExpenseItem from './ExpenseItem';
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import ExpenseItem from "./ExpenseItem";
+import { ExpenseAction } from "../redux/actions/expenseAction";
+
+interface IExpenseObject {
+  id: number;
+  name: string;
+  cost: string;
+}
 
 const ExpenseList = () => {
-    const expenses = [
-        { id: 11, name: 'Abc', cost: '50', },
-        { id: 12, name: 'Abc', cost: '50', },
-        { id: 13, name: 'Abc', cost: '50', },
-        { id: 14, name: 'Abc', cost: '50', },
-        { id: 15, name: 'Abc', cost: '50', },
-        { id: 16, name: 'Abc', cost: '50', },
-        { id: 17, name: 'Abc', cost: '50', },
+  const dispatch = useDispatch();
 
-    ]
-    return (
-        <>
-            <ul className='list-group mt-3 mb-3'>
-                {expenses.map((expense) => (
-                    <ExpenseItem
-                        key={expense.id}
-                        id={expense.id}
-                        name={expense.name}
-                        cost={expense.cost}
-                    />
-                ))}
-            </ul>
-        </>
-    );
+  const { expenses } = useSelector((state: RootState) => state.expenseReducer);
+  useEffect(() => {
+    dispatch(ExpenseAction.Creators.onGetExpenseDataList());
+  }, []);
+  return (
+    <>
+      <ul className="list-group mt-3 mb-3">
+        {expenses.map((expense: IExpenseObject) => (
+          <ExpenseItem
+            key={expense.id}
+            id={expense.id}
+            name={expense.name}
+            cost={expense.cost}
+          />
+        ))}
+      </ul>
+    </>
+  );
 };
 
 export default ExpenseList;
