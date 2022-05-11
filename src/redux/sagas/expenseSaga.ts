@@ -1,5 +1,5 @@
-import { call, put, takeLatest } from "redux-saga/effects";
-import { ExpenseAction } from "../actions/expenseAction";
+import { put, takeLatest } from "redux-saga/effects";
+import { Types } from "../actions/expenseAction";
 
 function* onGetExpenseDataList() {
   //TODO: API call
@@ -15,7 +15,7 @@ function* onGetExpenseDataList() {
     ];
     // const response = yield call(getExpenseList); // api call for get data
     yield put({
-      type: ExpenseAction.Types.SET_EXPENSE_DATA_LIST,
+      type: Types.SET_EXPENSE_DATA_LIST,
       expenses: expenseList,
     });
   } catch (error: unknown) {
@@ -24,10 +24,7 @@ function* onGetExpenseDataList() {
 }
 
 function* ExpenseSaga() {
-  yield takeLatest(
-    ExpenseAction.Types.ON_GET_EXPENSE_DATA_LIST,
-    onGetExpenseDataList
-  );
+  yield takeLatest(Types.ON_GET_EXPENSE_DATA_LIST, onGetExpenseDataList);
 }
 
 export default ExpenseSaga;

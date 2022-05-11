@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import ExpenseItem from "./ExpenseItem";
-import { ExpenseAction } from "../redux/actions/expenseAction";
+import { Creators } from "../redux/actions/expenseAction";
 
 interface IExpenseObject {
   id: number;
@@ -15,8 +15,8 @@ const ExpenseList = () => {
 
   const { expenses } = useSelector((state: RootState) => state.expenseReducer);
   useEffect(() => {
-    dispatch(ExpenseAction.Creators.onGetExpenseDataList());
-  }, []);
+    dispatch(Creators.onGetExpenseDataList());
+  }, [dispatch]);
   return (
     <>
       <ul className="list-group mt-3 mb-3">
