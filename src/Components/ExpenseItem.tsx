@@ -5,6 +5,7 @@ interface ItemType {
   name: string;
   cost: string;
 }
+
 function ExpenseItem({ name, cost }: ItemType) {
   return (
     <li className="list-group-item d-flex justify-content-between align-items-center">

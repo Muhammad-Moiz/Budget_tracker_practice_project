@@ -11,6 +11,7 @@ function ExpenseList() {
     { id: 16, name: 'Abc', cost: '50' },
     { id: 17, name: 'Abc', cost: '50' }
   ];
+
   return (
     <ul className="list-group mt-3 mb-3">
       {expenses.map((expense) => (
