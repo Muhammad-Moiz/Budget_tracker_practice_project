@@ -3,7 +3,7 @@ import { TiDelete } from 'react-icons/ti';
 
 interface ItemType {
   name: string;
-  cost: string;
+  cost: number;
 }
 
 function ExpenseItem({ name, cost }: ItemType) {

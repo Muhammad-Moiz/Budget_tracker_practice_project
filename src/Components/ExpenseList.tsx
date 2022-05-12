@@ -7,7 +7,7 @@ import { Creators } from '../redux/actions/expenseAction';
 interface IExpenseObject {
   id: number;
   name: string;
-  cost: string;
+  cost: number;
 }
 
 const ExpenseList = () => {

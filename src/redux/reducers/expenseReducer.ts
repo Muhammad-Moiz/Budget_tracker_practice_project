@@ -2,14 +2,14 @@ import { createReducer } from 'reduxsauce';
 import { Types } from '../actions/expenseAction';
 
 export interface IExpenseReducer {
-  expenses: { id: number; name: string; cost: string }[];
+  expenses: { id: number; name: string; cost: number }[];
   budget: number;
   loading: boolean;
   error?: string | null;
 }
 
 export interface IExpense {
-  expenses: { id: number; name: string; cost: string }[];
+  expenses: { id: number; name: string; cost: number }[];
 }
 
 const ExpenseInitialState: IExpenseReducer = {
