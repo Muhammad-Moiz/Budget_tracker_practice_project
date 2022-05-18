@@ -1,8 +1,8 @@
-import { combineReducers } from "redux";
-import { ExpenseReducer } from "./expenseReducer";
+import { combineReducers } from 'redux';
+import { ExpenseReducer } from './expenseReducer';
 
 const reducers = combineReducers({
-  expenseReducer: ExpenseReducer,
+  expenseReducer: ExpenseReducer
 });
 
 export default reducers;

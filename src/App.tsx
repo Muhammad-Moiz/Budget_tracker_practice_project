@@ -1,9 +1,9 @@
-import React from "react";
-import Budget from "./Components/Budget";
-import Remaining from "./Components/Remining";
-import ExpenseTotal from "./Components/ExpenseTotal";
-import ExpenseList from "./Components/ExpenseList";
-import AddExpenseForm from "./Components/AddExpenseForm";
+import React from 'react';
+import Budget from './Components/Budget';
+import Remaining from './Components/Remining';
+import ExpenseTotal from './Components/ExpenseTotal';
+import ExpenseList from './Components/ExpenseList';
+import AddExpenseForm from './Components/AddExpenseForm';
 
 function App() {
   return (
@@ -21,15 +21,15 @@ function App() {
         </div>
       </div>
 
-      <h3 className='mt-3'>Expenses</h3>
-      <div className='row '>
-        <div className='col-sm'>
+      <h3 className="mt-3">Expenses</h3>
+      <div className="row ">
+        <div className="col-sm">
           <ExpenseList />
         </div>
       </div>
-      <h3 className='mt-3'>Add Expense</h3>
-      <div className='row mt-3'>
-        <div className='col-sm'>
+      <h3 className="mt-3">Add Expense</h3>
+      <div className="row mt-3">
+        <div className="col-sm">
           <AddExpenseForm />
         </div>
       </div>

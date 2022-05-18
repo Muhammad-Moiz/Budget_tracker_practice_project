@@ -1,13 +1,11 @@
-import React from "react";
+import React from 'react';
 
-const Remaining = () => {
-    return (
-        <div className="alert alert-success">
-            <span>
-                Remaining: $200
-            </span>
-        </div>
-    )
+function Remaining() {
+  return (
+    <div className="alert alert-success">
+      <span>Remaining: $200</span>
+    </div>
+  );
 }
 
-export default Remaining
+export default Remaining;
