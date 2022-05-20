@@ -1,11 +1,14 @@
 import React from 'react';
+interface IBudget {
+  budget: number;
+}
 
-function Budget() {
+const Budget = ({ budget }: IBudget) => {
   return (
     <div className="alert alert-secondary">
-      <span>Budget: $200</span>
+      <span>Budget: ${budget}</span>
     </div>
   );
-}
+};
 
 export default Budget;

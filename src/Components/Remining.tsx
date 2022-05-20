@@ -1,11 +1,14 @@
 import React from 'react';
+interface IRemaining {
+  remaining: number;
+}
 
-function Remaining() {
+const Remaining = ({ remaining }: IRemaining) => {
   return (
     <div className="alert alert-success">
-      <span>Remaining: $200</span>
+      <span>Remaining: ${remaining}</span>
     </div>
   );
-}
+};
 
 export default Remaining;

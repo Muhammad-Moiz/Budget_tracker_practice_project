@@ -1,11 +1,13 @@
 import React from 'react';
-
-function ExpenseTotal() {
+interface IRemaining {
+  spentTotal: number;
+}
+const ExpenseTotal = ({ spentTotal }: IRemaining) => {
   return (
     <div className="alert alert-primary">
-      <span>Spent so far:: $200</span>
+      <span>Spent so far: ${spentTotal}</span>
     </div>
   );
-}
+};
 
 export default ExpenseTotal;
